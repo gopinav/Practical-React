@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import CountUp from 'react-countup'
+import './App.css'
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1>
+        <CountUp end={200} />
+      </h1>
+      <h1>
+        <CountUp end={200} duration={5} />
+      </h1>
+      <h1>
+        <CountUp start={500} end={1000} duration={5} />
+      </h1>
+      <h1>
+        <CountUp end={1000} duration={5} prefix='$' decimals={2} />
+      </h1>
+      <h1>
+        <CountUp end={1000} duration={5} suffix='USD' decimals={2} />
+      </h1>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
