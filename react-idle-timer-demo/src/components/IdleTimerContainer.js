@@ -14,12 +14,11 @@ function IdleTimerContainer () {
     setModalIsOpen(true)
     sessionTimeoutRef.current = setTimeout(logOut, 5000)
   }
-  const onAction = () => {
-    console.log('Action performed')
-  }
+
   const logOut = () => {
     setModalIsOpen(false)
     setIsLoggedIn(false)
+    clearTimeout(sessionTimeoutRef.current)
     console.log('User has been logged out')
   }
   const stayActive = () => {
@@ -34,8 +33,6 @@ function IdleTimerContainer () {
         ref={idleTimerRef}
         timeout={1000 * 5}
         onIdle={onIdle}
-        onAction={onAction}
-        debounce={1000}
       />
       <Modal isOpen={modalIsOpen}>
         <h2>You've been idle for a while!</h2>
