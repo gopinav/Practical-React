@@ -10,6 +10,12 @@ function App () {
       <DatePicker
         selected={selectedDate}
         onChange={date => setSelectedDate(date)}
+        placeholderText={'dd/mm/yyyy'}
+        // minDate={new Date()}
+        // maxDate={new Date()}
+        filterDate={date => date.getDay() !== 6 && date.getDay() !== 0}
+        showYearDropdown
+        scrollableYearDropdown
       />
     </div>
   )
