@@ -8,8 +8,8 @@ function App () {
   return (
     <div className='App'>
       <div className='chart'>
-        {/* <LineChart /> */}
-        {/* <BarChart /> */}
+        <LineChart />
+        <BarChart />
         <DoughnutChart />
       </div>
     </div>
